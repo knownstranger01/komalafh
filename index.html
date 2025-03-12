@@ -6,6 +6,31 @@
     <title>Komal Adult Family Home</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(event) {
+            event.preventDefault(); // फर्मको डिफल्ट सबमिशन रोक्नुहोस्
+            
+            const form = document.getElementById('contactForm');
+            const name = form.name.value;
+            const email = form.email.value;
+            const message = form.message.value;
+
+            Email.send({
+                Host: "smtp.yourisp.com", // यहाँ SMTP सर्वरको ठेगाना राख्नुहोस्
+                Username: "your_email@example.com", // यहाँ तपाईंको इमेल ठेगाना राख्नुहोस्
+                Password: "your_email_password", // यहाँ तपाईंको इमेल पासवर्ड राख्नुहोस्
+                To: 'sunil.paudel13@gmail.com', // यहाँ प्राप्तकर्ता इमेल ठेगाना राख्नुहोस्
+                From: email,
+                Subject: "New Contact Form Submission",
+                Body: `Name: ${name}<br>Email: ${email}<br>Message: ${message}`
+            }).then(
+                message => alert("Email sent successfully!")
+            ).catch(
+                error => alert("Failed to send email: " + JSON.stringify(error))
+            );
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -75,33 +100,11 @@
                 </div>
             </div>
         </section>
-
-        <section class="contact">
-            <div class="container">
-                <h2>Contact Us</h2>
-                <p>We'd love to hear from you! Please fill out the form below to get in touch with us.</p>
-
-                <form id="contactForm" action="path/to/server-script" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-phone"></i> Cell: 425-524-1780 (Preferred)</p>
-                    <p><i class="fas fa-phone"></i> Home: 425-572-6555</p>
-                    <p><i class="fas fa-fax"></i> Fax: 425-282-4058</p>
-                    <p><i class="fas fa-envelope"></i> afhkomal@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 1925 CAMAS CT SE, RENTON, WA 98055</p>
-                </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <a href="index.html">Home</a>

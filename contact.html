@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
     <header>
@@ -40,14 +41,14 @@
         </section>
 
         <section class="contact-content">
-            <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h2>Contact Information</h2>
-                        <p class="info-description">Feel free to reach out to us through any of these channels. We're available 24/7 to assist you.</p>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
+            <div class="container" style="display: flex; justify-content: center; align-items: center; min-height: calc(100vh - 300px);">
+                <div class="contact-info" style="width: 100%; max-width: 800px;">
+                    <h2 style="text-align: center;">Contact Information</h2>
+                    <p class="info-description" style="text-align: center;">Feel free to reach out to us through any of these channels. We're available 24/7 to assist you.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem;">
+                        <div class="info-item" style="display: flex; align-items: center; background: #f8f9fa; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-phone" style="font-size: 2rem; color: #007bff; margin-right: 1.5rem;"></i>
                             <div class="content-wrapper">
                                 <div class="text-content">
                                     <h3>Phone Numbers</h3>
@@ -70,8 +71,8 @@
                             </div>
                         </div>
                         
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
+                        <div class="info-item" style="display: flex; align-items: center; background: #f8f9fa; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-envelope" style="font-size: 2rem; color: #007bff; margin-right: 1.5rem;"></i>
                             <div class="content-wrapper">
                                 <div class="text-content">
                                     <h3>Email</h3>
@@ -81,8 +82,8 @@
                             </div>
                         </div>
                         
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-item" style="display: flex; align-items: center; background: #f8f9fa; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: #007bff; margin-right: 1.5rem;"></i>
                             <div class="content-wrapper">
                                 <div class="text-content">
                                     <h3>Location</h3>
@@ -90,68 +91,14 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="social-links">
-                            <h3>Connect With Us</h3>
-                            <div class="social-icons">
-                                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="contact-form">
-                        <h2>Send us a Message</h2>
-                        <p class="form-description">Have questions about our services? Fill out the form below and we'll get back to you promptly.</p>
-                        
-                        <form id="contactForm" action="mailto:sunil.paudel13@gmail.com" method="POST" enctype="text/plain">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
-                                <span class="error-message"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required>
-                                <span class="error-message"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" required>
-                                <span class="error-message"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <select id="subject" name="subject" required>
-                                    <option value="">Select a subject</option>
-                                    <option value="general">General Inquiry</option>
-                                    <option value="admission">Admission Information</option>
-                                    <option value="tour">Schedule a Tour</option>
-                                    <option value="services">Services Information</option>
-                                </select>
-                                <span class="error-message"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                                <span class="error-message"></span>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn">
-                                <span class="btn-text">Send Message</span>
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-
-                        <div class="success-message" style="display: none;">
-                            <i class="fas fa-check-circle"></i>
-                            <h3>Thank You!</h3>
-                            <p>Your message has been sent successfully. We'll get back to you soon.</p>
+                    <div class="social-links" style="text-align: center; margin-top: 3rem;">
+                        <h3>Connect With Us</h3>
+                        <div class="social-icons" style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem;">
+                            <a href="#" class="social-icon" style="font-size: 1.5rem; color: #007bff;"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-icon" style="font-size: 1.5rem; color: #007bff;"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon" style="font-size: 1.5rem; color: #007bff;"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
@@ -189,5 +136,157 @@
 
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
+    <script>
+        function validateAndSubmit(event) {
+            event.preventDefault();
+            
+            // सबै एरर मेसेजहरू र स्टाइल रिसेट
+            document.querySelectorAll('.error-message').forEach(error => error.textContent = '');
+            document.querySelectorAll('.form-group input, .form-group textarea, .form-group select').forEach(field => {
+                field.style.borderColor = '';
+                field.classList.remove('error-field');
+            });
+            
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const subject = document.getElementById('subject');
+            const message = document.getElementById('message');
+            
+            let currentField = null;
+            let isValid = true;
+
+            // त्रुटि देखाउने र फोकस गर्ने फंक्सन
+            function showError(field, errorId, message) {
+                const errorElement = document.getElementById(errorId);
+                if (errorElement) {
+                    errorElement.textContent = message;
+                    field.classList.add('error-field');
+                    field.style.borderColor = '#ff4444';
+                    
+                    // पहिलो त्रुटि भएको फिल्डमा मात्र फोकस गर्ने
+                    if (!currentField) {
+                        currentField = field;
+                        field.focus();
+                        field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+                isValid = false;
+            }
+
+            // नाम भेलिडेसन
+            if (!name.value.trim()) {
+                showError(name, 'nameError', 'Please enter your full name');
+            } else if (name.value.trim().length < 2) {
+                showError(name, 'nameError', 'Name must be at least 2 characters long');
+            }
+
+            // इमेल भेलिडेसन
+            if (!email.value.trim()) {
+                showError(email, 'emailError', 'Please enter your email address');
+            } else {
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+                if (!emailRegex.test(email.value)) {
+                    showError(email, 'emailError', 'Please enter a valid email address (example@domain.com)');
+                }
+            }
+
+            // फोन नम्बर भेलिडेसन (वैकल्पिक)
+            if (phone.value.trim()) {
+                const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+                if (!phoneRegex.test(phone.value)) {
+                    showError(phone, 'phoneError', 'Please enter a valid phone number (123-456-7890)');
+                }
+            }
+
+            // विषय भेलिडेसन
+            if (!subject.value) {
+                showError(subject, 'subjectError', 'Please select a subject');
+            }
+
+            // मेसेज भेलिडेसन
+            if (!message.value.trim()) {
+                showError(message, 'messageError', 'Please enter your message');
+            } else if (message.value.trim().length < 10) {
+                showError(message, 'messageError', 'Message must be at least 10 characters long');
+            }
+
+            // सबै फिल्ड सही भरिएको छ भने थ्यांक यू पेजमा जाने
+            if (isValid) {
+                console.log('Form is valid, redirecting to thank you page');
+                window.location.href = 'thank_you.html';
+            }
+        }
+
+        // रियल-टाइम त्रुटि हटाउने
+        document.querySelectorAll('.form-group input, .form-group textarea, .form-group select').forEach(field => {
+            field.addEventListener('input', function() {
+                if (this.classList.contains('error-field')) {
+                    this.style.borderColor = '';
+                    this.classList.remove('error-field');
+                    const errorSpan = this.parentElement.querySelector('.error-message');
+                    if (errorSpan) {
+                        errorSpan.textContent = '';
+                    }
+                }
+            });
+        });
+
+        // रियल-टाइम फोन नम्बर फर्म्याटिङ
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '').substring(0,10);
+            const sizes = [3, 3, 4];
+            let parts = [];
+            
+            for (let i = 0; i < sizes.length && value.length > 0; i++) {
+                parts.push(value.substring(0, sizes[i]));
+                value = value.substring(sizes[i]);
+            }
+            
+            e.target.value = parts.join('-');
+        });
+    </script>
+
+    <style>
+        .contact-content {
+            padding: 4rem 0;
+            background-color: #ffffff;
+        }
+
+        .contact-info h2 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .info-description {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .phone-number-item {
+            margin: 0.5rem 0;
+        }
+
+        .phone-label {
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .contact-items-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
 </body>
 </html> 
